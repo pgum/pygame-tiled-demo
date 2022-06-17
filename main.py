@@ -5,21 +5,23 @@ from settings import Settings
 def main():
     pygame.init()
     pygame.display.set_caption("Pixel Civilisations Demo")
-    settings = Settings()
+    s = Settings()
     screen = pygame.display.set_mode([
-        settings.display_settings["screen_width"],
-        settings.display_settings["screen_height"]
+        s.screen_settings["width"],
+        s.screen_settings["height"]
         ])
-    game = Game(settings)
+    game = Game(s)
     clock = pygame.time.Clock()
     done = False
-    
+    gameMap = pytmx.load_pygame('resources/maps/map.tmx')
+
     while not done:
         done = game.processEvents()
         game.update()
+        pygame.display.update()
         game.draw(screen)
-        clock.tick(settings.time_settings["fps"])
-      
+        clock.tick(s.time_settings["fps"])
+        
     pygame.quit()
 
 if __name__ == "__main__":

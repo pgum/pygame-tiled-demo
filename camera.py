@@ -1,0 +1,1 @@
+#TODO: create camera component to follow current player

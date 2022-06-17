@@ -1,0 +1,14 @@
+{
+    "screen" : {
+        "width" : 1680,
+        "height" : 1050
+    },
+    "time_settings": {
+        "fps" : 100
+    },
+    "map": {
+        "starting" : 0,
+        "folder" : "resources/maps/",
+        "files" : [ "map.tmx" ]
+    }
+}
